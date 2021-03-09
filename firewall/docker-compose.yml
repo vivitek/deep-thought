@@ -1,3 +1,5 @@
+version: "3"
+
 services:
   postgres:
     image: postgres
@@ -7,13 +9,13 @@ services:
     ports:
       - "5432:5432"
 
-  firewall_api:
-    image: firewall_flask
-    environment:
-      - DATABASE_URL=postgresql://rbouvard:postgrespwd@localhost:5432/firewallDB
-    depends_on:
-      - postgres
-    ports:
-      - "5000:5000"
-    labels:
-        io.balena.features.kernel-modules: '1'
+        #  firewall_api:
+        #image: firewall_flask
+        #environment:
+        #  - DATABASE_URL=postgresql://rbouvard:postgrespwd@localhost:5432/firewallDB
+        #depends_on:
+        #  - postgres
+        #ports:
+        #  - "5000:5000"
+        #labels:
+        #    io.balena.features.kernel-modules: '1'
